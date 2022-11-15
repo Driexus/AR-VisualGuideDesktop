@@ -35,13 +35,8 @@ async def sign_in_with_email_and_password_async(email, password):
     print(user["localId"])
     return user
 
-def get_walls():
-    ref = db.child("buildings").child("home").child("walls")
-    walls = ref.get().val()
-    return walls
-
-def get_walls2():
-    ref = db.child("test").child("test_id").child("walls")
+def get_walls(building_id):
+    ref = db.child("buildings").child(building_id).child("walls")
     walls = ref.get().val()
     return walls
 
