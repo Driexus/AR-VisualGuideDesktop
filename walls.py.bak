@@ -8,9 +8,12 @@ Created on Fri Oct 28 20:35:14 2022
 import pandas as pd
 import server
 
-vertices = pd.read_csv(r'C:\Users\Dimitris\Desktop\vertices.csv', sep = " ", header = None).to_numpy()
+vertices_path = r'C:\Users\Dimitris\Desktop\Blender\VisualGuide\vertices.csv'
+edges_path = r'C:\Users\Dimitris\Desktop\Blender\VisualGuide\edges.csv'
 
-edges = pd.read_csv(r'C:\Users\Dimitris\Desktop\edges.csv', sep = " ", header = None).to_numpy()
+vertices = pd.read_csv(vertices_path, sep = " ", header = None).to_numpy()
+
+edges = pd.read_csv(edges_path, sep = " ", header = None).to_numpy()
 walls = []
 for edge in edges:
     wall = [vertices[edge[0]], vertices[edge[1]]]

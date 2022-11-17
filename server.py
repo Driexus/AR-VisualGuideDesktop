@@ -32,7 +32,6 @@ db = firebase.database()
 
 async def sign_in_with_email_and_password_async(email, password):
     user = auth.sign_in_with_email_and_password(email, password)
-    print(user["localId"])
     return user
 
 def get_walls(building_id):
