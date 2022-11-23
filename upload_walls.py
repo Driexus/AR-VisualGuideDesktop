@@ -8,8 +8,8 @@ Created on Fri Oct 28 20:35:14 2022
 import pandas as pd
 import server
 
-vertices_path = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\Blender\Museum\vertices.csv'
-edges_path = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\Blender\Museum\edges.csv'
+vertices_path = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\Museum\vertices.csv'
+edges_path = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\Museum\edges.csv'
 
 vertices = pd.read_csv(vertices_path, sep = " ", header = None).to_numpy()
 

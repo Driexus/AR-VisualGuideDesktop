@@ -9,14 +9,14 @@ cls()
 obdata = bpy.context.active_object.data
 
 # Write to file
-outputPath = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\Blender\Museum\vertices.csv'
+outputPath = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\Museum\vertices.csv'
 file = open(outputPath, "w")
 
 for v in obdata.vertices:
     file.write('{} {}\n'.format(v.co.x, v.co.y))
 
 file.close()
-outputPath = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\Blender\Museum\edges.csv'
+outputPath = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\Museum\edges.csv'
 file = open(outputPath, "w")
 
 for e in obdata.edges:

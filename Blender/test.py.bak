@@ -1,0 +1,40 @@
+import bpy
+import os
+import math
+
+# Clear console
+os.system('cls')
+
+# Create directory to save data
+outputDir = r"C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\test\\"
+if not os.path.exists(outputDir):
+    os.mkdir(outputDir)
+
+objects = bpy.data.objects
+
+walls = objects["Walls"]
+targets = objects["Targets"]
+
+# Write wall vertices
+outputPath = os.path.join(outputDir, "vertices.csv")
+file = open(outputPath, "w")
+for v in walls.data.vertices:
+    file.write('{} {}\n'.format(v.co.x, v.co.y))
+file.close()
+
+# Write wall edges
+outputPath = os.path.join(outputDir, "edges.csv")
+file = open(outputPath, "w")
+for e in walls.data.edges:
+    file.write('{} {}\n'.format(e.vertices[0], e.vertices[1]))
+file.close()
+
+# Write target data
+outputPath = os.path.join(outputDir, "targets.csv")
+file = open(outputPath, "w")
+file.write('{} {} {} {} {} {} {}\n'.format("image_target_id", "x", "y", "z", "euler_x", "euler_y", "euler_z"))
+for target in targets.children:
+    location = target.location
+    rotation = target.rotation_euler * 180/math.pi
+    file.write('{} {} {} {} {} {} {}\n'.format(target.name, location[0], location[1], location[2], rotation[0], rotation[1], rotation[2]))
+file.close()
