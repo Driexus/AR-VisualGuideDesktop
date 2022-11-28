@@ -6,8 +6,20 @@ Created on Wed Nov 23 14:56:48 2022
 """
 
 import pandas as pd
-import server as server
+import os
+import server
 
-path = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\test\targets.csv'
+working_dir = r'C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\test\\'
 
-data = pd.read_csv(path, sep = " ")
+def read_targets():
+    path = os.path.join(working_dir, "targets.csv")
+    return pd.read_csv(path, sep = " ")
+
+def read_items():
+    path = os.path.join(working_dir, "items.csv")
+    return pd.read_csv(path, sep = " ")
+    
+items = read_items().to_dict("records")
+targets = read_targets().to_dict("records")
+
+server.set_items_coords("test building", items)
