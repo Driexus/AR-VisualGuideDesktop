@@ -23,3 +23,4 @@ items = read_items().to_dict("records")
 targets = read_targets().to_dict("records")
 
 server.set_items_coords("test building", items)
+server.set_targets_coords("test building", targets)

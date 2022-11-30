@@ -73,3 +73,7 @@ def set_items_descriptions(build_id, descriptions):
 def set_items_coords(build_id, data):
     ref = db.child("buildings").child(build_id).child("items_coords")
     ref.set(data)
+    
+def set_targets_coords(build_id, data):
+    ref = db.child("buildings").child(build_id).child("targets")
+    ref.set(data)
