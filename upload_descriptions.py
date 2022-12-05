@@ -22,4 +22,4 @@ for entry, value in zip(ids, data):
     key = entry["id"]
     out[key] = value
 
-server.set_items_descriptions("test building", out)
+server.set_items_characteristics("test building", out)
