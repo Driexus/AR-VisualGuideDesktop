@@ -46,6 +46,6 @@ outputPath = os.path.join(outputDir, "items.csv")
 file = open(outputPath, "w")
 file.write('{} {} {} {}\n'.format("item_id", "x", "y", "z"))
 for item in items.children:
-    location = target.location
-    file.write('{} {} {} {}\n'.format(target.name, location[0], location[1], location[2]))
+    location = item.location
+    file.write('{} {} {} {}\n'.format(item.name, location[0], location[1], location[2]))
 file.close()

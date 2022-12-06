@@ -19,6 +19,9 @@ ids = pd.read_csv(path, sep =",", usecols=[0]).to_dict("records")
 # Combine them into a new dictionary in the form of "id : data"
 out = {}
 for entry, value in zip(ids, data):
+    # Remove some unneeded data
+    value["section"] = value["section"].replace("Μόνιμη Έκθεση: ", "").replace('"', '')
+
     key = entry["id"]
     out[key] = value
 

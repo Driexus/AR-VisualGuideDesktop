@@ -6,7 +6,7 @@ import math
 os.system('cls')
 
 # Create directory to save data
-outputDir = r"C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\test\\"
+outputDir = r"C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\test"
 if not os.path.exists(outputDir):
     os.mkdir(outputDir)
 

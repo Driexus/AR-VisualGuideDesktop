@@ -64,10 +64,8 @@ def change_name(build_id, name):
     ref = db.child("buildings").child(build_id).child("name")
     ref.set(name)  
     
-def set_items_characteristicss(build_id, characteristics):
-    ref = db.child("buildings").child(build_id)
-    data = {}
-    data["items_characteristics"] = characteristics
+def set_items_characteristics(build_id, data):
+    ref = db.child("buildings").child(build_id).child("items_characteristics")
     ref.set(data)
     
 def set_items_coords(build_id, data):
