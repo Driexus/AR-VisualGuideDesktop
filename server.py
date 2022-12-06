@@ -60,7 +60,7 @@ def set_walls(build_id, walls):
     ref = db.child("buildings").child(build_id).child("walls")
     ref.set(walls)
 
-def change_name(build_id, name):
+def set_name(build_id, name):
     ref = db.child("buildings").child(build_id).child("name")
     ref.set(name)  
     

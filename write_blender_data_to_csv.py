@@ -1,14 +1,26 @@
 import bpy
-import os
+import os, sys, importlib
 import math
 
 # Clear console
 os.system('cls')
 
-# Create directory to save data
-outputDir = r"C:\Users\Dimitris\.spyder-py3\ARVisualGuideDesktop\csv_data\test"
-if not os.path.exists(outputDir):
-    os.mkdir(outputDir)
+# Import directory linker and create instance    
+filepath = bpy.data.filepath
+wdir = os.path.dirname(filepath)
+proj_dir = os.path.dirname(wdir)
+app_dir = os.path.dirname(proj_dir)
+
+if not app_dir in sys.path:
+    sys.path.append(app_dir)
+
+import directory_linker as dl
+importlib.reload(dl)
+
+linker = dl.Linker(wdir)
+
+# Get csv directory
+outputDir = linker.get_or_create_csv_dir()
 
 objects = bpy.data.objects
 
