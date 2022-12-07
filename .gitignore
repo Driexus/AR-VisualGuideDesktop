@@ -1,0 +1,5 @@
+# Ignore all the configuration files with possible credentials
+appConfig.ini
+appConfig.ini.bak
+Projects/*/config.ini
+Projects/*/config.ini.bak
