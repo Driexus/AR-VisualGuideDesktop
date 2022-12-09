@@ -32,8 +32,6 @@ email = fb_section["username"]
 password = fb_section["password"]
 user = auth.sign_in_with_email_and_password(email, password)
 
-print(user)
-
 def get_walls(building_id):
     ref = db.child("buildings").child(building_id).child("walls")
     walls = ref.get(user["idToken"]).val()
