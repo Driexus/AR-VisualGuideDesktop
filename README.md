@@ -1,7 +1,7 @@
 
 # AR-VisualGuide Desktop
 
-AR-VisualGuide is a prototype application developed mainly in Unity for use in Android, which aims to provide visitors of the Archeological Museum of Thessaloniki navigational assistance and information about the various exhibits. 
+AR-VisualGuide is a prototype application developed mainly in Unity for use in Android, which aims to provide visitors of the Archeological Museum of Thessaloniki with navigational assistance and information about the various exhibits. 
 
 This application was the main objective of a thesis for the Electrical and Computer Engineering degree, which may be found **here**. 
 
